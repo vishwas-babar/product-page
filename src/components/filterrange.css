@@ -1,0 +1,46 @@
+.container {
+    width: 250px;
+    height: 30px;
+    /* background-color: red; */
+}
+
+/* Track: webkit browsers */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #ccc;
+    border: 1px solid #000000;
+    border-radius: 16px;
+}
+
+/* Track: Mozilla Firefox */
+input[type="range"]::-moz-range-track {
+    height: 15px;
+    background: #ccc;
+    border: 1px solid #000000;
+    border-radius: 16px;
+}
+
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: #b90000;
+    border-radius: 50%; /* Make the thumb circular */
+    position: relative; /* Ensure the thumb is positioned relative */
+    z-index: 1; /* Ensure the thumb is above the ::after pseudo-element */
+}
+
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #f50;
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #f50;
+}

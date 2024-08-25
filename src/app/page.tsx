@@ -1,4 +1,10 @@
+
+// 'use client'
+// import MultiRangeSlider from "@/components/FilterRange";
+import { FilterRange } from "@/components/FilterRange";
+import { FilterSection } from "@/components/FilterSection";
 import { Navigator } from "@/components/Navigator";
+import { ProductCard } from "@/components/ProductCard";
 import { SearchBox } from "@/components/topnav/SearchBox";
 import Image from "next/image";
 
@@ -47,6 +53,29 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <section className="flex justify-between">
+        <FilterSection className=" sticky mt-16 left-0" />
+
+        <div className="w-full mt-16 ml-10">
+          <ProductCard
+            title="Product 1"
+            price={100}
+            isSpecial={true}
+          />
+        </div>
+        {/* <div className="ml-40 mt-16">
+
+          <FilterRange
+            // className="sticky top-24"
+            title="Preis"
+            min={0}
+            max={1000}
+            type="percentage"
+          />
+          
+        </div> */}
+      </section>
     </main>
   );
 }
