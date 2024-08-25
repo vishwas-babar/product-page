@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import React from 'react'
 
-export const ProductCard = ({ title, isSpecial, price }: {
+export const ProductCard = ({ title, isSpecial, tags, discount }: {
     isSpecial: boolean;
     title: string;
-    price: number;
+    tags: string[];
+    discount: number;
 
 }) => {
     return (
-        <div className={`w-[310px] scale-90 shadow-sm shadow-black rounded-tl-[30px] overflow-hidden rounded-br-[30px] ${isSpecial && " border-2 border-[#28E3E9] "}`}>
+        <div className={` w-[310px] shadow-sm shadow-black rounded-tl-[30px] overflow-hidden rounded-br-[30px] ${isSpecial && " border-2 border-[#28E3E9] "}`}>
             <div className={`h-48 w-full flex items-center justify-center relative overflow-hidden ${isSpecial && " border-b-2 border-[#28E3E9]"}`}>
                 <Image src={'/bottle.png'} loading='lazy' className='z-10 mt-5 w-auto flex items-end justify-end h-[140px]' height={150} width={100} alt='product' />
 
@@ -21,7 +22,7 @@ export const ProductCard = ({ title, isSpecial, price }: {
                         </small>
                     </div>
 
-                    {isSpecial && <div className={`bg-[#62C3C6] bg-opacity-10 py-[3px] px-3 rounded-full flex items-center justify-center gap-1 `} >
+                    {!isSpecial && <div className={`bg-[#62C3C6] bg-opacity-10 py-[3px] px-3 rounded-full flex items-center justify-center gap-1 `} >
                         <small className=' text-sm font-light text-[#116A6C] ' >
                             Neu
                         </small>
@@ -38,7 +39,7 @@ export const ProductCard = ({ title, isSpecial, price }: {
                             </button>
                             <div className='w-full flex items-center gap-2 justify-between'>
                                 <button className='bg-white w-full px-[10px] font-normal text-[#116A6C] rounded-sm py-1'>
-                                    THC 18%
+                                    THC {discount.toString() + "%"}
                                 </button>
                                 <button className='bg-[#62C3C6] font-normal text-white w-full px-[10px] rounded-sm py-1'>
                                     {'CBD <1%'}
@@ -50,18 +51,18 @@ export const ProductCard = ({ title, isSpecial, price }: {
                         </div>
                         <div className='w-full'>
                             <p className='font-semibold text-[18px] #116A6C text-wrap text-[#116A6C]'>
-                                Cannabis Flos 18/1 PT Mango
+                                {title}
                             </p>
                         </div>
                     </div>
                     <div className='flex flex-col gap-2 justify-between'>
                         <div className='flex items-center justify-between' >
-                            <small className=' font-normal text-[#365758]'>Kultivar</small>
-                            <small className=' font-normal text-[#365758]'>Mango</small>
+                            <small className=' font-normal text-[#365758]'>{tags[0]}</small>
+                            <small className=' font-normal text-[#365758]'>{tags[1]}</small>
                         </div>
                         <div className='flex items-center justify-between' >
-                            <small className=' font-normal text-[#365758]'>Genetik</small>
-                            <small className=' font-normal text-[#365758]'>Hybrid</small>
+                            <small className=' font-normal text-[#365758]'>{tags[2]}</small>
+                            <small className=' font-normal text-[#365758]'>{tags[3]}</small>
                         </div>
                     </div>
                 </div>

@@ -4,13 +4,14 @@
 import { FilterRange } from "@/components/FilterRange";
 import { FilterSection } from "@/components/FilterSection";
 import { Navigator } from "@/components/Navigator";
+import { Pagination } from "@/components/Pagination";
 import { ProductCard } from "@/components/ProductCard";
 import { SearchBox } from "@/components/topnav/SearchBox";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="h-[100vh] mx-40 mt-12">
+    <main className="min-h-[100vh] mx-40 mt-12">
 
       <div className="flex items-start justify-between mt-20">
         <Navigator />
@@ -55,26 +56,95 @@ export default function Home() {
       </div>
 
       <section className="flex justify-between">
-        <FilterSection className=" sticky mt-16 left-0" />
 
-        <div className="w-full mt-16 ml-10">
-          <ProductCard
-            title="Product 1"
-            price={100}
-            isSpecial={true}
-          />
+        <FilterSection className=" sticky mt-16 w-[250px] left-0" />
+
+        <div>
+          <div className="grid p-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-xl:grid-cols-3 gap-16">
+
+
+            <div className="w-full ">
+              <ProductCard
+                title="Cannabis Flos 18/1 PT Mango"
+                isSpecial={true}
+                tags={["Kultivar", "Mango", "Genetik", "Hybrid"]}
+                discount={18}
+              />
+            </div>
+            <div className="w-full ">
+              <ProductCard
+                title="Cannabis Flos 18/1 PT Mango"
+                isSpecial={true}
+                tags={["Kultivar", "Mango", "Genetik", "Hybrid"]}
+                discount={18}
+              />
+            </div>
+            <div className="w-full ">
+              <ProductCard
+                title="Cannabis Flos 18/1 PT Mango"
+                isSpecial={true}
+                tags={["Kultivar", "Mango", "Genetik", "Hybrid"]}
+                discount={18}
+              />
+            </div>
+
+            <div className="w-full ">
+              <ProductCard
+                title="Cannabis Flos 22/1 PT Ku.Pink Kush DAB Canify"
+                isSpecial={false}
+                tags={["Kultivar", "Pink Kush", "Genetik", "Hybrid"]}
+                discount={25}
+              />
+            </div>
+            <div className="w-full ">
+              <ProductCard
+                title="Cannabis Flos 22/1 PT Ku.Pink Kush DAB Canify"
+                isSpecial={false}
+                tags={["Kultivar", "Pink Kush", "Genetik", "Hybrid"]}
+                discount={25}
+              />
+            </div>
+            <div className="w-full ">
+              <ProductCard
+                title="Cannabis Flos 22/1 PT Ku.Pink Kush DAB Canify"
+                isSpecial={false}
+                tags={["Kultivar", "Pink Kush", "Genetik", "Hybrid"]}
+                discount={25}
+              />
+            </div>
+
+
+            <div className="w-full ">
+              <ProductCard
+                title="Cannabis Flos 18/1 PT Mango"
+                isSpecial={true}
+                tags={["Kultivar", "Mango", "Genetik", "Hybrid"]}
+                discount={18}
+              />
+            </div>
+            <div className="w-full ">
+              <ProductCard
+                title="Cannabis Flos 18/1 PT Mango"
+                isSpecial={true}
+                tags={["Kultivar", "Mango", "Genetik", "Hybrid"]}
+                discount={18}
+              />
+            </div>
+            <div className="w-full ">
+              <ProductCard
+                title="Cannabis Flos 18/1 PT Mango"
+                isSpecial={true}
+                tags={["Kultivar", "Mango", "Genetik", "Hybrid"]}
+                discount={18}
+              />
+            </div>
+
+
+          </div>
+
+          <Pagination />
         </div>
-        {/* <div className="ml-40 mt-16">
 
-          <FilterRange
-            // className="sticky top-24"
-            title="Preis"
-            min={0}
-            max={1000}
-            type="percentage"
-          />
-          
-        </div> */}
       </section>
     </main>
   );

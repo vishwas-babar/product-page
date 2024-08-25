@@ -14,7 +14,7 @@ export const Navitem = ({ isActiveTab, title }: {
             )}
             {/* <Image src={'/leaf.svg'} color={isActiveTab ? "#28E3E9" : "#62C3C6"} width={10} height={16} alt='search logo' /> */}
 
-            <h2 className={` ${isActiveTab ? " font-bold text-[#045A5C]" : " font-normal text-[#045A5C]"}`} >
+            <h2 className={` text-nowrap ${isActiveTab ? " font-bold text-[#045A5C]" : " font-normal text-[#045A5C]"}`} >
                 {title}
             </h2>
         </div>
