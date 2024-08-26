@@ -11,12 +11,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-[100vh] mx-40 mt-12">
+    <main className="min-h-[100vh] mx-5 sm:mx-8 lg:12 xl:mx-40 mt-12">
 
       <div className="flex items-start justify-between mt-20">
         <Navigator />
 
-        <div className="flex gap-[12px] flex-col w-[223px] h-[63px] items-center ">
+        <div className="hidden md:flex gap-[12px] flex-col w-[223px] h-[63px] items-center ">
           <p className="w-full text-center font-normal text-sm text-[#365758]">
             GKV mit Kostenübernahme?
           </p>
@@ -27,14 +27,14 @@ export default function Home() {
       </div>
 
 
-      <div className="w-full flex items-center justify-between mt-5">
-        <h2 className="flex items-center justify-center gap-5">
+      <div className="w-full flex flex-wrap items-center justify-between mt-5">
+        <h2 className="hidden lg:flex items-center  justify-center gap-5">
           <Image src="/activeleaf.svg" width={15} height={20} alt="search logo" />
           <Image src="/bluten.svg" width={95} height={20} alt="bluten logo" />
         </h2>
 
         <div className="flex items-center justify-end gap-5">
-          <SearchBox />
+          <SearchBox className="" />
 
           <div className="w-fit h-[34px] px-[12px] py-[2px] flex items-center justify-center gap-[10px] bg-[#62C3C64D] rounded-sm font-semibold text-[#365758]">
             <small>Sortieren nach</small>
@@ -57,13 +57,11 @@ export default function Home() {
 
       <section className="flex justify-between">
 
-        <FilterSection className=" sticky mt-16 w-[250px] left-0" />
+        <FilterSection className="hidden lg:flex sticky mt-16 w-[250px] left-0 " />
 
         <div>
-          <div className="grid p-10 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-xl:grid-cols-3 gap-16">
-
-
-            <div className="w-full ">
+          <div className="grid p-10 grid-cols-1 justify-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-16">
+            <div className="w-full">
               <ProductCard
                 title="Cannabis Flos 18/1 PT Mango"
                 isSpecial={true}
@@ -71,7 +69,7 @@ export default function Home() {
                 discount={18}
               />
             </div>
-            <div className="w-full ">
+            <div className="w-full">
               <ProductCard
                 title="Cannabis Flos 18/1 PT Mango"
                 isSpecial={true}
@@ -79,7 +77,7 @@ export default function Home() {
                 discount={18}
               />
             </div>
-            <div className="w-full ">
+            <div className="w-full">
               <ProductCard
                 title="Cannabis Flos 18/1 PT Mango"
                 isSpecial={true}
@@ -87,8 +85,7 @@ export default function Home() {
                 discount={18}
               />
             </div>
-
-            <div className="w-full ">
+            <div className="w-full">
               <ProductCard
                 title="Cannabis Flos 22/1 PT Ku.Pink Kush DAB Canify"
                 isSpecial={false}
@@ -96,7 +93,7 @@ export default function Home() {
                 discount={25}
               />
             </div>
-            <div className="w-full ">
+            <div className="w-full">
               <ProductCard
                 title="Cannabis Flos 22/1 PT Ku.Pink Kush DAB Canify"
                 isSpecial={false}
@@ -104,7 +101,7 @@ export default function Home() {
                 discount={25}
               />
             </div>
-            <div className="w-full ">
+            <div className="w-full">
               <ProductCard
                 title="Cannabis Flos 22/1 PT Ku.Pink Kush DAB Canify"
                 isSpecial={false}
@@ -112,9 +109,7 @@ export default function Home() {
                 discount={25}
               />
             </div>
-
-
-            <div className="w-full ">
+            <div className="w-full">
               <ProductCard
                 title="Cannabis Flos 18/1 PT Mango"
                 isSpecial={true}
@@ -122,7 +117,7 @@ export default function Home() {
                 discount={18}
               />
             </div>
-            <div className="w-full ">
+            <div className="w-full">
               <ProductCard
                 title="Cannabis Flos 18/1 PT Mango"
                 isSpecial={true}
@@ -130,7 +125,7 @@ export default function Home() {
                 discount={18}
               />
             </div>
-            <div className="w-full ">
+            <div className="w-full">
               <ProductCard
                 title="Cannabis Flos 18/1 PT Mango"
                 isSpecial={true}
@@ -138,10 +133,7 @@ export default function Home() {
                 discount={18}
               />
             </div>
-
-
           </div>
-
           <Pagination />
         </div>
 
